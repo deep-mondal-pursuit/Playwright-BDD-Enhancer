@@ -1,0 +1,39 @@
+{
+  "name": "demowebshop-bdd",
+  "version": "1.0.0",
+  "description": "Playwright + Cucumber BDD UI test framework for Demo Web Shop (runs with cucumber-js and playwright-bdd)",
+  "private": true,
+  "scripts": {
+    "test": "cucumber-js",
+    "test:headed": "cross-env HEADLESS=false cucumber-js",
+    "test:smoke": "cucumber-js --tags @smoke",
+    "test:ui": "cucumber-js --tags @ui",
+    "test:dry": "cucumber-js --dry-run",
+    "pw:gen": "bddgen",
+    "pw:test": "bddgen && playwright test",
+    "pw:headed": "bddgen && playwright test --headed",
+    "pw:ui": "bddgen && playwright test --ui",
+    "pw:debug": "bddgen && playwright test --debug",
+    "pw:smoke": "bddgen && playwright test --grep @smoke",
+    "pw:tag:ui": "bddgen && playwright test --grep @ui",
+    "pw:report": "playwright show-report",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint .",
+    "format": "prettier --write ."
+  },
+  "devDependencies": {
+    "@cucumber/cucumber": "^13.3.0",
+    "@eslint/js": "^10.0.1",
+    "@playwright/test": "^1.64.1",
+    "@types/node": "^26.6.6",
+    "cross-env": "^10.1.0",
+    "dotenv": "^18.0.9",
+    "eslint": "^10.14.0",
+    "globals": "^17.14.0",
+    "playwright-bdd": "^9.2.1",
+    "prettier": "^3.9.10",
+    "ts-node": "^10.9.2",
+    "typescript": "~6.0.3",
+    "typescript-eslint": "^8.72.1"
+  }
+}
